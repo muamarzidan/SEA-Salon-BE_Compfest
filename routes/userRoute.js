@@ -5,4 +5,4 @@ const { getAllUsers } = require('../controllers/userController');
 
 router.get('/', authenticate, getAllUsers);
 
-module.exports = router
+module.exports = router;

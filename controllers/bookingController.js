@@ -1,6 +1,6 @@
-// controllers/bookingController.js
 const Booking = require('../models/Booking');
 const Service = require('../models/Service');
+const User = require('../models/User');
 const { validationResult } = require('express-validator');
 
 exports.createBooking = async (req, res) => {
@@ -20,7 +20,7 @@ exports.createBooking = async (req, res) => {
     try {
         const existingBooking = await Booking.findOne({
             where: {
-                serviceId: serviceId,   
+                serviceId: serviceId,
                 date: date,
                 time: time
             }
@@ -37,20 +37,22 @@ exports.createBooking = async (req, res) => {
     }
 };
 
-exports.getBooking = async (req, res) => {
+exports.getAllBookings = async (req, res) => {
     try {
         const bookings = await Booking.findAll({
-            where: {
-                userId: req.user.userId
-            },
             include: [
                 {
-                    model: Service
+                    model: Service,
+                    attributes: ['id', 'name', 'type', 'price']
+                },
+                {
+                    model: User,
+                    attributes: ['id', 'username', 'email', 'phone']
                 }
             ]
         });
-        res.status(200).json(bookings);
+        res.status(200).send(bookings);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).send({ error: err.message });
     }
-}
+};

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { body } = require('express-validator');
-const { createBooking, getBooking } = require('../controllers/bookingController');
+const { createBooking, getAllBookings } = require('../controllers/bookingController');
 const { authenticate } = require('../middlewares/auth');
 const { checkRole } = require('../middlewares/roleCheck');
 
@@ -15,6 +15,6 @@ router.post('/',
     ], createBooking
 );
 
-router.get('/', authenticate, getBooking);
+router.get('/', getAllBookings);
 
 module.exports = router;

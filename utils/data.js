@@ -5,6 +5,11 @@
 //     "password": "password123"
 // }
 
+// {
+//     "email": "john@example.com",
+//     "password": "password123"
+// }
+
 
 // {
 //     "email": "thomas.n@compfest.id",

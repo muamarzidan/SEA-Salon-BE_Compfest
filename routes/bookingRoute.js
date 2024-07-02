@@ -11,10 +11,10 @@ router.post('/',
     [
         body('serviceId').isInt(),
         body('date').isDate(),
-        body('time').matches(/^([0-1]\d|2[0-1]):00$/)
+        body('time').matches(/^([01]\d|2[0-3]):([0-5]\d)$/)
     ], createBooking
 );
 
-router.get('/', getBooking);
+router.get('/', authenticate, getBooking);
 
 module.exports = router;

@@ -14,11 +14,11 @@ sequelize.sync({ force: false })
 // const bcrypt = require('bcrypt');
 
 // const ADMIN_USER_DETAILS = {
-    // username: 'Thomas N',
-    // email: 'thomas.n@compfest.id',
-    // phone: '08123456789',
-    // password: 'Admin123',
-    // role: 'Admin'
+//     username: 'Thomas N',
+//     email: 'thomas.n@compfest.id',
+//     phone: '08123456789',
+//     password: 'Admin123',
+//     role: 'Admin'
 // };
 
 // async function createAdminUser() {

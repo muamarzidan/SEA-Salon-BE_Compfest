@@ -4,3 +4,9 @@
 //     "phone": "1234567890",
 //     "password": "password123"
 // }
+
+
+// {
+//     "email": "thomas.n@compfest.id",
+//     "password": "Admin123"
+// }

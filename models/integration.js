@@ -3,7 +3,6 @@ const Service = require('./Service');
 const Review = require('./Review');
 const Booking = require('./Booking');
 
-// Associations
 Service.hasMany(Review, { foreignKey: 'serviceId' });
 User.hasMany(Review, { foreignKey: 'userId' });
 User.hasMany(Booking, { foreignKey: 'userId' });

@@ -1,3 +1,4 @@
+// SETUP DATABASE REFRESHER
 const { sequelize } = require('./models');
 require('./models/integration');
 
@@ -10,6 +11,9 @@ sequelize.sync({ force: false })
     });
 
 
+// SETUP ADMIN
+// const { sequelize } = require('./models');
+// require('./models/integration');
 // const User = require('./models/User');
 // const bcrypt = require('bcrypt');
 

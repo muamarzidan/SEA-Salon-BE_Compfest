@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const sequelize = require('./config/db');
 const authRoutes = require('./routes/authRoute');
 const bookingRoutes = require('./routes/bookingRoute');
@@ -8,6 +9,12 @@ const serviceRoutes = require('./routes/serviceRoute');
 const userRoutes = require('./routes/userRoute');
 const app = express();
 require('dotenv').config();
+
+
+app.use(cors({
+    origin: 'http://localhost:5173', // spesify with fe port
+    credentials: true
+}));
 
 app.use(bodyParser.json());
 app.use('/api/users', userRoutes);

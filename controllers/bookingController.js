@@ -14,7 +14,7 @@ exports.createBooking = async (req, res) => {
     const [hours, minutes] = time.split(':').map(Number);
     
     if (hours < 9 || hours > 21 || minutes !== 0) {
-        return res.status(400).json({ error: 'Invalid time slot. We are open from 09:00 to 21:00.' });
+        return res.status(400).json({ error: 'Invalid time slot, we are open from 09:00 to 21:00' });
     }
 
     try {
@@ -27,7 +27,7 @@ exports.createBooking = async (req, res) => {
         });
 
         if (existingBooking) {
-            return res.status(400).json({ error: 'This time slot is already booked.' });
+            return res.status(400).json({ error: 'This time slot is already booked' });
         }
 
         const booking = await Booking.create({ userId, serviceId, date, time });
